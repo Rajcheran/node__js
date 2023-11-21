@@ -1,19 +1,20 @@
 const express = require('express');
-// this exports a function , so we import it
+// mine files below
 const adminroute = require('./routes/admin');
 const shoproute = require('./routes/shop');
 
-const bodyparser =require('body-parser'); // npm install --save body-parser 
+const bodyparser =require('body-parser'); 
 const app = express();
 
-app.use(bodyparser.urlencoded({extended: false}));// it parser the body to get text for other parseing we need other methods 
+app.use(bodyparser.urlencoded({extended: false}));
 
 
-app.use(adminroute); // this works for both 'GET' and 'POST' request made
+app.use('/admin',adminroute); // all urls start with /admin enter this use it is a filter
 
-//app.get() for get request
 app.use(shoproute);
 
-
+app.use((req,res,next) => {
+    res.status(404).send('<h1>page not found</h1>')
+});
 
 app.listen(3000);

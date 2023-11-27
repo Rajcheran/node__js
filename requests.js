@@ -44,12 +44,4 @@ const requesthandler = (req, res) => {
 //module.exports = requesthandler; // use only route as var created in first
 exports.handler = requesthandler ; /// we have to use route.handler to acess the function
 
-// npm init to get package.json and filll details asked in terminal , u will get a file package.json 
-//add the below two lines to it , to modify command to npm start
-//"start": "node first.js",
-//"start-server": "node first.js"// this will not atomatically start the server we have to write npm start again to re-start the server
-//
-// npm install nodemon --save-dev  // this is used to download node modules into file it is local to the folder
-//"start": "nodemon first.js", changed to nodemon 
-//"start-server": "node first.js"//
-// this atomatically restarts the server without cancel previous process and write command again as  npm start again and again
+

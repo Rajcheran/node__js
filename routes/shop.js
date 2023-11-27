@@ -1,9 +1,12 @@
+const path = require('path');
 const express = require('express');
+const admindata = require('./admin')
 
-const route = express();
+const routes = express();
 
-route.get('/',(req, res, next )=>{
-    res.send('./hacka/index.html');
+routes.get('/',(req, res, next )=>{
+    console.log(admindata.products);
+    res.sendFile(path.join(__dirname,'..','views','shop.html'));
 });
 
-module.exports = route;
+module.exports = routes;

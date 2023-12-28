@@ -8,6 +8,9 @@ const shoproute = require('./routes/shop');
 const bodyparser =require('body-parser'); 
 const app = express();
 
+app.set('view engine','pug');
+app.set('views','views');
+
 app.use(bodyparser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname,'./','style')));// this must be used to apply css on html file
 
@@ -18,9 +21,10 @@ app.use(shoproute);
 
 
 app.use((req,res,next) => {
-     res.status(404).send('<h1>page not found</h1>') // for 404 error page not found
+    // res.status(404).send() // for 404 error page not found
     // res.sendFile(path.join(path,'../.','hacka','index.html')); 
     //res.sendFile(path.join(__dirname,'../.','hacka','index.html'));
+    res.render('404');
 });
 
 app.listen(3000);

@@ -1,22 +1,32 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title #{pagetitle}
-        link(rel="stylesheet", href="/styles.css")
-    body 
-        header.main-class 
-            nav.main-nav 
-                ul.listss 
-                    li.item 
-                        a.active(href="/") shop 
-                    li.item 
-                        a(href="/admin/add-product")  Add product
-        main
-            form.product_form(action="/admin/add-product", method="post")
-                input(type="text", name="title")
-                button.btn(type="submit") Add product
+extends main_layout.pug
+
+block styles 
+    link(rel="stylesheet", href="/styles.css")
+
+block content
+    main
+        form.product_form(action="/admin/add-product", method="post")
+            input(type="text", name="title")
+            button.btn(type="submit") Add product
+    
+//- replace ing pug code with template code and adding code which is different to this page from other
+
+//- doctype html
+//- html(lang="en")
+//-     head
+//-         meta(charset="UTF-8")
+//-         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+//-         title #{pagetitle}
+        
+//-     body 
+//-         header.main-class 
+//-             nav.main-nav 
+//-                 ul.listss 
+//-                     li.item 
+//-                         a.active(href="/") shop 
+//-                     li.item 
+//-                         a(href="/admin/add-product")  Add product
+        
         
     
 

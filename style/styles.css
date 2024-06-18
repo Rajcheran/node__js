@@ -9,11 +9,17 @@
 
 .listss{
     background-color: aquamarine;
+    display: flex;
+    justify-content:space-around;
 }
 .grid{
     text-align: center;
     width: 100vmax;
 }
 a{
-    
+    text-decoration:none;
+    color: blue;
+}
+.m{
+    display: inline;
 }

@@ -1,7 +1,7 @@
 const products = require('../models/products');
 const Product = require('../models/products');
 const cart = require('../models/cart');
-const path = require('../views/util/path');
+const path = require('../util/path');
 const car = require('../models/cart');
 
  exports.getproducts=(req, res, next )=>{

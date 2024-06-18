@@ -17,7 +17,7 @@ const adminRoutes = require('./routes/admin');
 const shoproute = require('./routes/shop');
 
 const errorcontroller= require('./controller/error')
-
+const mongoconnect = require('./util/database');
 
 app.use(bodyparser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname,'./','style')));// this must be used to apply css on html file
@@ -30,4 +30,9 @@ app.use(shoproute);
 
 app.use(errorcontroller.get404);
 
-app.listen(3000);
+
+
+mongoconnect((client)=>{
+    console.log(client);
+    app.listen(4000);
+})
